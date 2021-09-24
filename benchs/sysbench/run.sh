@@ -3,22 +3,22 @@
 set -eu
 set -o pipefail
 
-runs=10
+runs=1
 
 TAR_VER=$(tarantool -v | grep -e "Tarantool" |  grep -oP '\s\K\S*')
 numaconf="numactl --membind=1 --cpunodebind=1 --physcpubind=6,7,8,9,10,11"
 
 ARRAY_TESTS=(
     "oltp_read_only"
-    "oltp_write_only"
-    "oltp_read_write"
-    "oltp_update_index"
-    "oltp_update_non_index"
-    "oltp_insert"
-    "oltp_delete"
-    "oltp_point_select"
-    "select_random_points"
-    "select_random_ranges"
+#    "oltp_write_only"
+#    "oltp_read_write"
+#    "oltp_update_index"
+#    "oltp_update_non_index"
+#    "oltp_insert"
+#    "oltp_delete"
+#    "oltp_point_select"
+#    "select_random_points"
+#    "select_random_ranges"
 #    "bulk_insert"
 )
 

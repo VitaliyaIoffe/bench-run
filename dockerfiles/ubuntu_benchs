@@ -34,7 +34,7 @@ RUN ( cmake . >build.log 2>&1 && make -j >>build.log 2>&1 && \
     make install >>build.log 2>&1 ) || ( cat build.log && false )
 
 # sysbench
-RUN git clone https://github.com/tarantool/sysbench.git /opt/sysbench
+RUN git clone https://github.com/VitaliyaIoffe/sysbench.git /opt/sysbench
 WORKDIR /opt/sysbench
 RUN ( ./autogen.sh >build.log 2>&1 && \
     ./configure --with-tarantool --without-mysql >>build.log 2>&1 && \
