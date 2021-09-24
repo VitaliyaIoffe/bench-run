@@ -46,7 +46,7 @@ for test in "${ARRAY_TESTS[@]}"; do
             --time=${TIME} --warmup-time=${WARMUP_TIME} run >>sysbench_output.txt
 
         $numaconf sysbench $test $opts cleanup >>sysbench_output.txt
-
+        cat sysbench_output.txt
         cat sysbench_output.txt | grep -e 'transactions:' | grep -oP '\(\K\S*' | tee $tlog
         tres=`cat $tlog | sed 's#^.*:##g' | sed 's#\..*$##g'`
         res=$(($res+$tres))
