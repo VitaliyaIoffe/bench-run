@@ -10,16 +10,16 @@ numaconf="numactl --membind=1 --cpunodebind=1 --physcpubind=6,7,8,9,10,11"
 
 ARRAY_TESTS=(
     "oltp_read_only"
-#    "oltp_write_only"
-#    "oltp_read_write"
-#    "oltp_update_index"
-#    "oltp_update_non_index"
-#    "oltp_insert"
-#    "oltp_delete"
-#    "oltp_point_select"
-#    "select_random_points"
-#    "select_random_ranges"
-#    "bulk_insert"
+    "oltp_write_only"
+    "oltp_read_write"
+    "oltp_update_index"
+    "oltp_update_non_index"
+    "oltp_insert"
+    "oltp_delete"
+    "oltp_point_select"
+    "select_random_points"
+    "select_random_ranges"
+    "bulk_insert"
 )
 
 WARMUP_TIME=5
