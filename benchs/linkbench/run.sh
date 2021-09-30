@@ -31,6 +31,7 @@ $numaopts /opt/linkbench/bin/linkbench -c $cfgfile -l 2>&1 | tee loading.res.txt
 sync && echo "sync passed" || echo "sync failed with error" $?
 echo 3 > /proc/sys/vm/drop_caches
 $numaopts /opt/linkbench/bin/linkbench -c $cfgfile -r 2>&1 | tee linkbench_output.txt
+cat linkbench_output.txt
 
 grep "REQUEST PHASE COMPLETED" linkbench_output.txt | sed "s/.*second = /linkbench:/" | tee -a linkbench.ssd_result.txt
 echo ${TAR_VER} | tee linkbench.ssd_t_version.txt
